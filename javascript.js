@@ -1,14 +1,12 @@
 function getComputerChoice () {
     let random = Math.random();
     if (random <= 0.3333) {
-        return console.log('Rock');
+        return ('Rock');
     }
     else if (random > 0.3333 && random < 0.6666 ) {
-        return console.log('Paper');
+        return ('Paper');
     }
     else {
-        return console.log('Scissors');
+        return ('Scissors');
     }
 }
-
-console.log(getComputerChoice());
