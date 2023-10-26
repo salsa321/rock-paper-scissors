@@ -20,25 +20,33 @@ function singleRoundOfRPS (playerSelection, computerSelection = getComputerChoic
     else if (userChoice === 'ROCK' && computerSelection === 'Paper') {
         return 'You lose! Paper beats Rock';
     }
-    /*else if (userChoice === 'ROCK' && computerSelection === 'Rock') {
-        return 'Its a draw!! Play Again!';
-    }*/
     else if (userChoice === 'PAPER' && computerSelection === 'Rock') {
         return 'You win! Paper beats Rock';
     }
     else if (userChoice === 'PAPER' && computerSelection === 'Scissors') {
         return 'You lose! Scissors beats Paper';
     }
-    /*else if (userChoice === 'PAPER' && computerSelection === 'Paper') {
-        return 'Its a draw'
-    }*/
     else if (userChoice === 'SCISSORS' && computerSelection === 'Paper') {
         return 'You win! Scissors beats Paper';
     }
     else if (userChoice === 'SCISSORS' && computerSelection === 'Rock') {
         return 'You lose! Rock beats Scissors';
     }
+    else if (userChoice !== 'ROCK' && userChoice !== 'PAPER' && userChoice !== 'SCISSORS') {
+        return 'Please enter either Rock, Paper or Scissors';
+    }
     else {
         return 'Its a draw!! Play again!';
     }
 }
+
+/*function game() {
+    for (let i = 0; i < 5; i++) {
+        console.log(prompt('Enter Rock, Paper or Scissors:', '');
+        
+            singleRoundOfRPS(prompt('Enter Rock, Paper or Scissors:', ''), computerSelection));
+        if (prompt == null || prompt == !)
+    }
+}
+
+/*console.log(game());*/
