@@ -45,8 +45,9 @@ function singleRoundOfRPS (playerSelection, computerSelection = getComputerChoic
         console.log(prompt('Enter Rock, Paper or Scissors:', '');
         
             singleRoundOfRPS(prompt('Enter Rock, Paper or Scissors:', ''), computerSelection));
-        if (prompt == null || prompt == !)
     }
 }
 
 /*console.log(game());*/
+
+console.log (singleRoundOfRPS(prompt('Enter Rock, Paper or Scissors:', '')));
