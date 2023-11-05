@@ -18,33 +18,35 @@ function getComputerChoice () {
 function singleRoundOfRPS (playerSelection, computerSelection = getComputerChoice()) {
     playerSelection = prompt('Enter Rock, Paper or Scissors:', '').toUpperCase();
     if (playerSelection === 'ROCK' && computerSelection === 'Scissors') {
-        win++;
+        ++win;
         return  'You win! Rock beats Scissors';
     }
     else if (playerSelection === 'ROCK' && computerSelection === 'Paper') {
-        lose++;
+        ++lose;
         return 'You lose! Paper beats Rock';
     }
     else if (playerSelection === 'PAPER' && computerSelection === 'Rock') {
-        win++;
+        ++win;
         return 'You win! Paper beats Rock';
     }
     else if (playerSelection === 'PAPER' && computerSelection === 'Scissors') {
-        lose++;
+        ++lose;
         return 'You lose! Scissors beats Paper';
     }
     else if (playerSelection === 'SCISSORS' && computerSelection === 'Paper') {
-        win++;
+        ++win;
         return 'You win! Scissors beats Paper';
     }
     else if (playerSelection === 'SCISSORS' && computerSelection === 'Rock') {
-        lose++;
+        ++lose;
         return 'You lose! Rock beats Scissors';
     }
     else if (playerSelection !== 'ROCK' && playerSelection !== 'PAPER' && playerSelection !== 'SCISSORS') {
-        return 'Please enter either Rock, Paper or Scissors';
+        return singleRoundOfRPS();
+        /*return /*'Please enter either Rock, Paper or Scissors'*/
     }
     else {
+        ++draw;
         return 'Its a draw!! Play again!';
     }
 }
@@ -64,9 +66,15 @@ function game() {
     else if (lose > 2) {
         return "Unlucky - You have lost...Try again.";
     }
-    else {
-        return "It's a draw! Play again.";
+    else if (draw > 2) {
+        return "It's a tie-game! Please play again.";
     }
+    else {
+        return "It's a tie-game! Please play again.";
+    }
+    /*else if (error >= 1) { 
+        return singleRoundOfRPS ();
+    }*/
         /*if (singleGame === 'You win! Rock beats Scissors'
         || singleGame === 'You win! Paper beats Rock' 
         || singleGame === 'You win! Scissors beats Paper') {
