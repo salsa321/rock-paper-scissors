@@ -57,9 +57,6 @@ function game() {
     console.log(singleRoundOfRPS());
     console.log(singleRoundOfRPS());
     console.log(singleRoundOfRPS());
-    /*for (let i = 0; i < 5; i++) {
-        console.log(singleGame);
-    }*/
     if (win > 2) {
         return "Congratulations! You have won the game!";
     }
@@ -71,36 +68,7 @@ function game() {
     }
     else {
         return "It's a tie-game! Please play again.";
-    }
-    /*else if (error >= 1) { 
-        return singleRoundOfRPS ();
-    }*/
-        /*if (singleGame === 'You win! Rock beats Scissors'
-        || singleGame === 'You win! Paper beats Rock' 
-        || singleGame === 'You win! Scissors beats Paper') {
-            win = ++win;
-        }
-        else if (singleGame === 'You lose! Paper beats Rock'
-        || singleGame === 'You lose! Scissors beats Paper' 
-        || singleGame === 'You lose! Rock beats Scissors') {
-            lose = ++lose;
-        }
-        else if (singleGame === 'Its a draw!! Play again!') {
-            draw = ++draw;
-            
-            (function () {
-            if (i === 4 && win > 2) {
-                return "Congratulations! You've won the game.";
-            }
-            else if (i === 4 && lose > 2) {
-                return "Unlucky :( - You've lost, try again.";
-            }
-            else if (i === 4 && draw > 2) {
-                return "It's a draw! - play again.";
-            }
-        });*/ 
-           
-       
+    }                  
 }
 
 console.log(game());
