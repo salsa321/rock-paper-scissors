@@ -15,8 +15,8 @@ function getComputerChoice () {
     }
 }
 
-function singleRoundOfRPS (playerSelection, computerSelection = getComputerChoice()) {
-    playerSelection = prompt('Enter Rock, Paper or Scissors:', '').toUpperCase();
+function singleRoundOfRPS (playerChoice, computerSelection = getComputerChoice()) {
+    playerSelection = /*prompt('Enter Rock, Paper or Scissors:', '')*/playerChoice.toUpperCase();
     if (playerSelection === 'ROCK' && computerSelection === 'Scissors') {
         ++win;
         return  'You win! Rock beats Scissors';
@@ -43,7 +43,7 @@ function singleRoundOfRPS (playerSelection, computerSelection = getComputerChoic
     }
     else if (playerSelection !== 'ROCK' && playerSelection !== 'PAPER' && playerSelection !== 'SCISSORS') {
         console.log('Please enter either Rock, Paper or Scissors')
-        return singleRoundOfRPS();
+        return prompt('Enter Rock, Paper or Scissors:', '');
     }
     else {
         ++draw;
@@ -51,7 +51,7 @@ function singleRoundOfRPS (playerSelection, computerSelection = getComputerChoic
     }
 }
 
-function game() {
+/*function game() {
     console.log(singleRoundOfRPS());
     console.log(singleRoundOfRPS());
     console.log(singleRoundOfRPS());
@@ -71,4 +71,22 @@ function game() {
     }                  
 }
 
-console.log(game());
+console.log(game());*/
+
+let rock = document.querySelector('#rock');
+let paper = document.querySelector('#paper');
+let scissors = document.querySelector('#scissors');
+
+document.body.addEventListener('click', (e) => {
+    switch (e.target.id) {
+        case 'rock':
+            console.log(singleRoundOfRPS('rock'));
+            break;
+        case 'paper':
+            console.log(singleRoundOfRPS('paper'));
+            break;
+        case 'scissors':
+            console.log(singleRoundOfRPS('scissors'));
+            break;    
+    }
+});
