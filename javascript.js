@@ -76,17 +76,35 @@ console.log(game());*/
 let rock = document.querySelector('#rock');
 let paper = document.querySelector('#paper');
 let scissors = document.querySelector('#scissors');
+let score = document.querySelector('#score');
+let outcome = document.querySelector('#outcome');
 
 document.body.addEventListener('click', (e) => {
     switch (e.target.id) {
         case 'rock':
-            console.log(singleRoundOfRPS('rock'));
+            singleRoundOfRPS('rock');
+            score.textContent = `You have won: ${win}, You have lost: ${lose}, Draw: ${draw}`;
             break;
         case 'paper':
-            console.log(singleRoundOfRPS('paper'));
+            singleRoundOfRPS('paper');
+            score.textContent = `You have won: ${win}, You have lost: ${lose}, Draw: ${draw}`;
             break;
         case 'scissors':
-            console.log(singleRoundOfRPS('scissors'));
+            singleRoundOfRPS('scissors');
+            score.textContent = `You have won: ${win}, You have lost: ${lose}, Draw: ${draw}`;
             break;    
     }
+    if (win === 5) {
+        outcome.textContent = "You have won the game! Well done!";
+        win = 0;
+        lose = 0;
+        draw = 0;
+    }
+    else if (lose === 5) {
+        outcome.textContent = "You have lost the game... :(";
+        win = 0;
+        draw = 0;
+        lose = 0;
+    }
 });
+
